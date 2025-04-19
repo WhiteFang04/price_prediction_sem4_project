@@ -91,7 +91,7 @@ def set_background(image_file):
 st.set_page_config(page_title="📊 Stock Forecast Dashboard", layout="wide")
 
 # Set background image
-set_background("assets/iPad Stock Wallpaper.jpeg")  # Ensure this file exists
+set_background("forecasting model/assets/iPad Stock Wallpaper.jpeg")  # Ensure this file exists
 
 # ========== Header ==========
 st.markdown('<div class="section">', unsafe_allow_html=True)
