@@ -112,6 +112,11 @@ if uploaded_file:
 
     df.columns = [col.strip() for col in df.columns]
     df.rename(columns={'Date ': 'Date', 'Close ': 'Close', 'Open ': 'Open', 'Shares Traded ': 'Shares Traded'}, inplace=True)
+    try:
+        df['Date'] = pd.to_datetime(df['Date'], dayfirst=True, errors='raise')
+    except Exception as e:
+        st.error(f"❌ Failed to parse 'Date' column. Make sure it is in a consistent date format like 'DD-MMM-YYYY'. Error: {e}")
+
     st.success("✅ File uploaded and cleaned successfully!")
 
     st.subheader("📄 Data Preview")
